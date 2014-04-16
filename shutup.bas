@@ -1,1 +1,1 @@
-main: goto main ; shutup
+main: goto main
