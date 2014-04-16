@@ -1,0 +1,1 @@
+main: high 4 pause 5000 low 4 pause 5000 goto main ; switch on output 1 ; wait 5 seconds ; switch off output 1 ; wait 5 seconds ; loop back to start

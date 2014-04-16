@@ -1,0 +1,1 @@
+main: goto main ; shutup
