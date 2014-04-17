@@ -4,8 +4,6 @@ import time
 import subprocess
 
 from app import celery
-
-
 from app import compiler_path
 from app import usb_port
 
