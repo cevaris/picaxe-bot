@@ -1,3 +1,5 @@
+
+
 from app import app
 from tasks import move
 
@@ -6,7 +8,7 @@ from tasks import move
 def index():
     return "Hello, World!"
 
-@app.route('/move/forward/<n>')
-def move_forward(n):
-    move('forward', n)
-    return "Moving forward %s" % n
+@app.route('/move/forward/<feet>')
+def move_forward(feet):
+    move('forward', feet)
+    return "Moving forward %s" % feet
