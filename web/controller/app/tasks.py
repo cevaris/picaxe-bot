@@ -13,7 +13,7 @@ from app import usb_port
 def move(direction,feet):
 
   print "Moving forward %s spaces" % feet
-  bot_script = render_template(('%s.html' % direction), feet=feet)
+  bot_script = render_template(('%s.html' % direction), time=(int(int(feet)*2.150)))
 
   temp_file = tempfile.NamedTemporaryFile()
   with temp_file as writer:
@@ -25,9 +25,11 @@ def move(direction,feet):
     # print "RESULT %s" % call([compiler_path, '-c', usb_port, temp_file.name]) 
     # print "RESULT %s" % call([compiler_path, '-c', usb_port, temp_file.name]) 
 
+    print bot_script
+
 
     # p = subprocess.Popen([compiler_path, '-s', temp_file.name], stdout=subprocess.PIPE)
-    command = [os.path.abspath(compiler_path), '-c', usb_port, temp_file.name]
+    command = [os.path.abspath(compiler_path), "-c%s" % usb_port, temp_file.name]
     print ' '.join(command)
     p = subprocess.Popen(command, stdout=subprocess.PIPE)
     output, err = p.communicate()

@@ -1,4 +1,8 @@
 main:
-  forward A   ; start A motor
-  forward B   ; start B motor
-  goto main
+  forward A
+  forward B
+
+  wait 4200
+
+  halt A
+  halt B

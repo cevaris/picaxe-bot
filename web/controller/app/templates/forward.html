@@ -1,11 +1,8 @@
 main:
-  forward A   ; start A motor
-  forward B   ; start B motor
+  forward A
+  forward B
 
-  let b0 = 0
-  let b0 = 2150 * {{feet}}
-  pause b0
-  
-  halt A      ; stop B motor
-  halt B      ; stop B motor
-  goto main
+  wait {{time}}
+
+  halt A
+  halt B
