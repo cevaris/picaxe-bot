@@ -27,7 +27,9 @@ def move(direction,feet):
 
 
     # p = subprocess.Popen([compiler_path, '-s', temp_file.name], stdout=subprocess.PIPE)
-    p = subprocess.Popen([compiler_path, '-c', usb_port, temp_file.name], stdout=subprocess.PIPE)
+    command = [os.path.abspath(compiler_path), '-c', usb_port, temp_file.name]
+    print ' '.join(command)
+    p = subprocess.Popen(command, stdout=subprocess.PIPE)
     output, err = p.communicate()
     print  output
 
