@@ -18,8 +18,14 @@ Project Layout
 
 
 
-Getting started (command line)
+Getting started
 --
+First things first, you need to find out which port your Picaxe bot is running on. First unplug all usb devices from your computer. Then plug in your bot via USB (the bot does not event need to be on). Lastly execute and write down the result of the follwing command.  
+```bash
+$ ls /dev/tty.usbserial*  
+/dev/tty.usbserial-00001014
+```
+
 
 
 Getting started (web portal)
