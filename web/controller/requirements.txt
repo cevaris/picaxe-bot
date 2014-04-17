@@ -13,4 +13,3 @@ flup
 celery
 redis
 logging
-#flask-celery
