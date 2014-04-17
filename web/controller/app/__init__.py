@@ -1,5 +1,8 @@
 import os 
 
+import logging
+from logging.handlers import RotatingFileHandler
+
 from flask import Flask
 from celery import Celery
 
@@ -20,14 +23,12 @@ celery.conf.add_defaults(app.config)
 
 # Logging
 LOG_FILENAME = 'logs/dev.log'
-app.logger.setLevel(logging.INFO)
-
 handler = logging.handlers.RotatingFileHandler(
   LOG_FILENAME,
   maxBytes=1024 * 1024 * 100,
   backupCount=20
 )
-
+handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
 from app import views

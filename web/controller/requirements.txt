@@ -12,4 +12,5 @@ flask-babel==0.8
 flup
 celery
 redis
+logging
 #flask-celery
