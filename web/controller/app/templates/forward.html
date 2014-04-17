@@ -1,7 +1,11 @@
 main:
   forward A   ; start A motor
   forward B   ; start B motor
-  pause 2150*{{feet}}
+
+  let b0 = 0
+  let b0 = 2150 * {{feet}}
+  pause b0
+  
   halt A      ; stop B motor
   halt B      ; stop B motor
   goto main

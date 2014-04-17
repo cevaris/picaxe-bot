@@ -1,6 +1,7 @@
 import tempfile
 import os
-from subprocess import call
+# from subprocess import call
+import subprocess
 
 from app import celery
 from flask import render_template
@@ -20,6 +21,15 @@ def move(direction,feet):
     writer.flush()
     # print temp_file.name
     # print "RESULT %s" % call(['cat', temp_file.name]) 
-    print os.path.abspath(compiler_path)
-    print "RESULT %s" % call([compiler_path, '-c', usb_port, temp_file.name]) 
+    # print os.path.abspath(compiler_path)
+    # print "RESULT %s" % call([compiler_path, '-c', usb_port, temp_file.name]) 
+    # print "RESULT %s" % call([compiler_path, '-c', usb_port, temp_file.name]) 
+
+
+    # p = subprocess.Popen([compiler_path, '-s', temp_file.name], stdout=subprocess.PIPE)
+    p = subprocess.Popen([compiler_path, '-c', usb_port, temp_file.name], stdout=subprocess.PIPE)
+    output, err = p.communicate()
+    print  output
+
+    
 
